@@ -1,0 +1,38 @@
+.detailProductContainer {
+    box-shadow: 0 4px 8px rgba(0.5, 0.5, 0.5, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 0;
+    margin: 8rem 5rem 0 5rem;
+    background-color: #282828;
+}
+
+.detailImage {
+    width: 30rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 2rem;
+}
+
+.detailItemCount {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.detailName {
+    color: white;
+    font-size: 3rem;
+}
+
+.detailText {
+    color: white;
+    font-size: 1.7rem;
+}
+
+.detailPrice {
+    color: white;
+    font-size: 1.7rem;
+    padding-bottom: 10rem;
+}

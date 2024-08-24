@@ -1,0 +1,36 @@
+.itemCountContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemCountButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.itemCountButtonA {
+    font-size: 2rem;
+    color: white;
+    background-color: #383838;
+    padding: 0.7rem 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+}
+
+.itemCountButtonB {
+    font-size: 2rem;
+    color: white;
+    background-color: #383838;
+    padding: 0rem 0.7rem;
+    margin: 0 1.2rem 0 1.2rem;
+    height: 3.5rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+}
+
+.itemCountText{
+    font-size: 3rem;
+    color: white;
+}

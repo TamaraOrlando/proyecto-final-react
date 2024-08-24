@@ -1,0 +1,48 @@
+.bienvenidaContainer{
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #383838;
+}
+
+.listaProductos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.card{
+    width: 15rem;
+    height: 28rem;
+    margin-bottom: 5rem;
+    background-color: #282828;
+}
+
+.cardImage{
+    height: 15rem;
+}
+
+.cardName{
+    padding: 0.7rem 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cardPrice{
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.cardDetails{
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+}
