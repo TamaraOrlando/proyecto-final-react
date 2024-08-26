@@ -1,6 +1,10 @@
+import { addDoc, collection } from "firebase/firestore";
+import db from "../database/database.js";
+
+
 const productos = [
     {
-      id: 1,
+      id: 'Tr1',
       nombre: "Alquiler de volquetes",
       descripcion: "Contenedores de 5m3 para limpieza. Contratación de 4 días.",
       precio: 60000,
@@ -9,7 +13,7 @@ const productos = [
       imagen: "/img/volquetes.jpeg"
     },
     {
-      id: 2,
+      id: 'Tr2',
       nombre: "Alquiler de maquinaria vial",
       descripcion: "Retroexcavadoras, minicargadoras, con o sin servicio de alquiler de camión volcador.",
       precio: 100000,
@@ -18,7 +22,7 @@ const productos = [
       imagen: "/img/maquinaria.jpeg"
     },
     {
-        id: 3,
+        id: 'Tr3',
         nombre: "Tierra fertilizada",
         descripcion: "Tierra negra fertilizada mezclada con compost.",
         precio: 50000,
@@ -27,7 +31,7 @@ const productos = [
         imagen: "/img/tierrafertilizada.png"
       },
       {
-        id: 4,
+        id: 'Tr4',
         nombre: "Tierra negra fina",
         descripcion: "Tierra negra fina ideal para parques.",
         precio: 30000,
@@ -36,7 +40,7 @@ const productos = [
         imagen: "/img/tierranegrafina.png"
       },
       {
-        id: 5,
+        id: 'Tr5',
         nombre: "Tosca",
         descripcion: "Tierra negra fina mezclada con cascotes",
         precio: 40000,
@@ -45,7 +49,7 @@ const productos = [
         imagen: "/img/tosca.png"
       },
       {
-        id: 6,
+        id: 'Tr6',
         nombre: "Podas, desmonte",
         descripcion: "Poda de arboleda y extracción de raíz.",
         precio: 60000,
@@ -54,7 +58,7 @@ const productos = [
         imagen: "/img/poda.jpeg"
       },
       {
-        id: 7,
+        id: 'Tr7',
         nombre: "Demoliciones",
         descripcion: "Demolición con o sin retiro de escombros.",
         precio: 200000,
@@ -63,7 +67,7 @@ const productos = [
         imagen: "/img/demolicion.jpeg"
       },
       {
-        id: 8,
+        id: 'Tr8',
         nombre: "Plateas",
         descripcion: "Excavacación de suelo vegetal (20cm), relleno con tosca, compactación y nivelación.",
         precio: 300000,
@@ -72,7 +76,7 @@ const productos = [
         imagen: "/img/platea.jpeg"
       },
       {
-        id: 9,
+        id: 'Tr9',
         nombre: "Excavaciones",
         descripcion: "Excavación para piletas, sótanos, bases, plateas, zanjas y pilotines.",
         precio: 250000,
@@ -80,14 +84,13 @@ const productos = [
         stock: 2,
         imagen: "/img/excavacion.jpeg"
       }
-  ]
+  ];
+
+  const seedProducts = () => {
+    productos.map(({ id, ...rest }) => {
+      const productosRef = collection(db, "productos")
+      addDoc(productosRef, rest)
+    })
+  }
   
-  const obtenerProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productos)
-      }, 1000);
-    });
-  };
-  
-  export default obtenerProductos
+  seedProducts()

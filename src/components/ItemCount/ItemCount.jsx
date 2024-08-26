@@ -1,5 +1,5 @@
-import "./itemcount.css"
-import { useState } from "react"
+import { useState } from "react";
+import "./itemcount.css";
 
 const ItemCount = ({ stock, agregarAlCarrito }) => {
   const [count, setCount] = useState(1)
@@ -32,4 +32,4 @@ const ItemCount = ({ stock, agregarAlCarrito }) => {
     </div>
   )
 }
-export default ItemCount
+export default ItemCount;
