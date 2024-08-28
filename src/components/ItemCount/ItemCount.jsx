@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { toast } from 'react-toastify';
+
 import "./itemcount.css";
 
 const ItemCount = ({ stock, agregarAlCarrito }) => {
@@ -16,11 +18,19 @@ const ItemCount = ({ stock, agregarAlCarrito }) => {
     }
   }
 
+  const handleAgregarAlCarrito = () => {
+    agregarAlCarrito(count);
+    toast.success(`Se han agregado ${count} producto(s) correctamente al carrito`, {
+      position: "top-right", 
+      autoClose: 2000, 
+    });
+  }
+
   return (
     <div className="itemCountContainer">
 
       <div className="itemCountButtons">
-        <button onClick={() => agregarAlCarrito(count)} className="itemCountButtonA">Agregar al carrito</button>
+        <button onClick={handleAgregarAlCarrito}className="itemCountButtonA">Agregar al carrito</button>
       </div>
 
       <div className="itemCountButtons">

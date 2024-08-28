@@ -1,10 +1,12 @@
 import { useState, useContext } from 'react';
+import { toast } from 'react-toastify';
 import { CartContext } from '../../context/CartContext';
 import { Timestamp, addDoc, collection } from 'firebase/firestore';
+
 import FormCheckout from './FormCheckout.jsx';
 import db from '../../database/database.js';
 import validateForm from '../../utils/validacionFormulario.js';
-import { toast } from 'react-toastify';
+
 import './checkout.css';
 
 const Checkout = () => {
@@ -28,6 +30,7 @@ const Checkout = () => {
       fecha: Timestamp.fromDate(new Date()),
       total: precioTotal(),
     };
+
     const response = await validateForm(datosForm);
     if (response.status === 'success') {
       sendOrder(orden);
@@ -49,8 +52,8 @@ const Checkout = () => {
   return (
     <div className="checkout">
       {idOrden ? (
-        <div className="order-completed">
-          <h2>Orden completada correctamente! 😁</h2>
+        <div className="orderCompleted">
+          <h2>¡Orden completada correctamente!</h2>
           <p>Guarde el id de su orden generada: {idOrden} </p>
         </div>
       ) : (

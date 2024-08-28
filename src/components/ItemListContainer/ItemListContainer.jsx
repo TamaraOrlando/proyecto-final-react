@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import "./itemlistcontainer.css"
 import { ClimbingBoxLoader } from 'react-spinners';
@@ -9,6 +8,9 @@ import {
   query,
   where,
 } from 'firebase/firestore';
+
+import ItemList from "./ItemList";
+import Footer from "../Footer/Footer.jsx";
 import db from '../../database/database.js';
 
 const ItemListContainer = ({ bienvenida }) => { const [productos, setProductos] = useState([]);
@@ -61,26 +63,6 @@ const ItemListContainer = ({ bienvenida }) => { const [productos, setProductos] 
   }, [idCategoria]);
 
 
-  // const [productos, setProductos] = useState([]);
-  // const { idCategoria } = useParams();
-
-  // useEffect(() => {
-  //   obtenerProductos()
-  //     .then((respuesta) => {
-  //       if (idCategoria) {
-  //         const productosFiltrados = respuesta.filter( (producto)=> producto.categoria === idCategoria)
-  //         setProductos(productosFiltrados)
-  //       } else {
-  //         setProductos(respuesta);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     })
-  //     .finally(() => {
-  //       console.log("Finalizo la promesa");
-  //     });
-  // }, [idCategoria]);
 
   return (
     <div>
@@ -92,8 +74,7 @@ const ItemListContainer = ({ bienvenida }) => { const [productos, setProductos] 
       ) : (
         <ItemList productos={productos} />
       )}
-
-      {/* <ItemList productos={productos} /> */}
+      <Footer />
     </div>
   );
 };

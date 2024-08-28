@@ -1,38 +1,40 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import "./itemlistcontainer.css";
 
 const Item = ({ producto }) => {
-  const [expandir, setExpandir] = useState(false)
+  const [hover, setHover] = useState(false)
 
   const handleMouseOver = () => {
-    setExpandir(true)
+    setHover(true)
   };
 
   const handleMouseLeave = () => {
-    setExpandir(false)
+    setHover(false)
   };
 
   const estiloCard = {
-    transform: expandir ? 'scale(1.1)' : 'scale(1)',
-    transition: 'transform 0.3s ease-in-out',
+    transition: 'box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out',
+    boxShadow: hover ? '0 8px 16px rgba(0, 0, 0, 0.8)' : '0 4px 8px rgba(0, 0, 0, 0.5)',
     margin: "20px 60px",
     backgroundColor: '#282828',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
     textAlign: 'center',
   }
 
   const estiloImagen = {
     width: '100%',
     objectFit: 'cover',
+    transition: 'filter 0.3s ease-in-out',
+    filter: hover ? 'brightness(1.2)' : 'brightness(1)',
   };
 
   return (
     <div
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
-      style={ estiloCard }
-      className={ expandir ? "cardExpandida" : "card" }
+      style={estiloCard}
+      className="card"
     >
       <img className="cardImage" src={producto.imagen} alt="" style={estiloImagen} />
       <p className="cardName">{producto.nombre}</p>

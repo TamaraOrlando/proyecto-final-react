@@ -6,7 +6,7 @@
     align-items: center;
   }
   
-  .form-checkout {
+  .formCheckout {
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,12 +15,12 @@
     align-items: center;
     font-size: 25px;
   }
-  .form-checkout input {
+  .formCheckout input {
     font-size: 25px;
     border-radius: 5px;
     margin: 20px 0;
   }
-  .button-form {
+  .buttonForm {
     background-color: rgb(19, 19, 19);
     border: none;
     color: white;
@@ -33,3 +33,12 @@
     text-align: center;
   }
   
+  .formText{
+    color: white;
+    opacity: 0.9;
+  }
+
+  .orderCompleted{
+    color: white;
+    opacity: 0.9;
+  }

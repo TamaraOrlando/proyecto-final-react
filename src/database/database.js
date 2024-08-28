@@ -13,16 +13,6 @@ const firebaseConfig = {
 
 
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyA65J9FXYXXt7E_NEuX9xLZN6Vr7B6-Luw",
-//   authDomain: "proyecto-final-react-6d710.firebaseapp.com",
-//   projectId: "proyecto-final-react-6d710",
-//   storageBucket: "proyecto-final-react-6d710.appspot.com",
-//   messagingSenderId: "826062119490",
-//   appId: "1:826062119490:web:fe7720c577b87808f683db"
-// };
-
-
 initializeApp(firebaseConfig);
 
 const db = getFirestore()

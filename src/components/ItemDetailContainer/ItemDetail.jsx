@@ -1,8 +1,10 @@
-import "./itemdetailcontainer.css";
-import ItemCount from "../ItemCount/ItemCount";
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+
+import ItemCount from "../ItemCount/ItemCount";
+
+import "./itemdetailcontainer.css";
 
 const ItemDetail = ({ producto }) => {
   const { agregarProducto } = useContext(CartContext);
@@ -28,12 +30,10 @@ const ItemDetail = ({ producto }) => {
         {mostrarItemCount ? (
           <ItemCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito} />
         ) : (
-          <Link to="/cart" className="button-detail">
+          <Link to="/cart" className="buttonDetail">
             Ir al carrito
           </Link>
         )}
-
-        {/* <ItemCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito} /> */}
       </div>
     </div>
   );
